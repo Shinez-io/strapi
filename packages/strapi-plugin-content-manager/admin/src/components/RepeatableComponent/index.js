@@ -112,6 +112,7 @@ const RepeatableComponent = ({
                 hasErrors={hasErrors}
                 hasMinError={hasMinError}
                 isFirst={index === 0}
+                itemIndex={index}
                 isReadOnly={isReadOnly}
                 isOpen={isOpen}
                 key={key}

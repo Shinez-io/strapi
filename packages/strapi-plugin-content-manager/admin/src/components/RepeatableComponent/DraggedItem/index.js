@@ -25,6 +25,7 @@ const DraggedItem = ({
   isFirst,
   isReadOnly,
   isOpen,
+  itemIndex,
   onClickToggle,
   schema,
   toggleCollapses,
@@ -148,6 +149,7 @@ const DraggedItem = ({
         doesPreviousFieldContainErrorsAndIsOpen={doesPreviousFieldContainErrorsAndIsOpen}
         isDragging={isDragging}
         isOpen={isOpen}
+        itemIndex={itemIndex}
         isReadOnly={isReadOnly}
         onClickToggle={onClickToggle}
         onClickRemove={() => {
@@ -217,6 +219,7 @@ DraggedItem.defaultProps = {
   hasMinError: false,
   isFirst: false,
   isOpen: false,
+  itemIndex: 0,
   toggleCollapses: () => {},
 };
 
@@ -227,6 +230,7 @@ DraggedItem.propTypes = {
   hasMinError: PropTypes.bool,
   isFirst: PropTypes.bool,
   isOpen: PropTypes.bool,
+  itemIndex: PropTypes.number,
   isReadOnly: PropTypes.bool.isRequired,
   onClickToggle: PropTypes.func.isRequired,
   schema: PropTypes.object.isRequired,

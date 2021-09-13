@@ -21,6 +21,7 @@ const Banner = forwardRef(
       isReadOnly,
       isDragging,
       isOpen,
+      itemIndex,
       onClickToggle,
       onClickRemove,
       style,
@@ -44,6 +45,9 @@ const Banner = forwardRef(
       >
         {isDragging && <PreviewCarret isComponent />}
         <>
+          <div className="">
+            <span>Block #{itemIndex + 1}</span>
+          </div>
           <div className="img-wrapper" style={{ display }}>
             <Carret />
           </div>
@@ -88,6 +92,7 @@ Banner.defaultProps = {
   isDragging: false,
   isFirst: false,
   isOpen: false,
+  itemIndex: false,
   onClickRemove: () => {},
   onClickToggle: () => {},
   style: {},
@@ -101,6 +106,7 @@ Banner.propTypes = {
   isDragging: PropTypes.bool,
   isFirst: PropTypes.bool,
   isOpen: PropTypes.bool,
+  itemIndex: PropTypes.number,
   isReadOnly: PropTypes.bool.isRequired,
   onClickToggle: PropTypes.func,
   onClickRemove: PropTypes.func,
